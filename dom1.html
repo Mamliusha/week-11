@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .container_item {
+            border: 1px solid black;
+            width: 50%;
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            padding: 15px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 20px;
+        }
+
+        img {
+            max-width: 80%;
+        }
+
+        div {
+            text-align: center;
+        }
+
+        .container2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2>Корзина</h2>
+    </header>
+    <main>
+        <div class="container">
+            <div class="container_item" id="item1">
+                <img src="/JS/js_week1/dom/imgs/2330505_550.jpg" alt="img1" />
+                <div>
+                    Шотландские ученые считают фолиевую кислоту самым полезным витамином
+                    для женского здоровья и красоты. Она является одним из главных
+                    участников процесса образования в организме новых клеток: белых
+                    кровяных клеток — лейкоцитов, красных кровяных телец — эритроцитов,
+                    новых клеток кожи и волос.
+                </div>
+                <p id="ItemPrice">1190</p>
+            </div>
+            <div class="container_item" id="item2">
+                <img src="/JS/js_week1/dom/imgs/2407843_550.jpg" alt="img2" />
+                <div>
+                    Облепиховое масло содержит не только экстракт ягод, но и молодых
+                    побегов и коры облепихи, что многократно усиливает его
+                    оздоравливающие свойства. Сочетание Омега 3, витамина, Е и
+                    фитостеринов помогает поддерживать гормональный баланс и хороший
+                    мышечный тонус, включает общие механизмы омоложения. Облепиховое
+                    масло хорошо заживляет и оздоравливает слизистые и кожу, придает ей
+                    приятный персиковый оттенок.
+                </div>
+                <p id="ItemPrice2">1741</p>
+            </div>
+            <div class="container_item" id="item3">
+                <img src="/JS/js_week1/dom/imgs/2485179_550.jpg" alt="img3" />
+                <div>
+                    Порошок хлореллы рекордсмен по содержанию хлорофилла (аналог
+                    человеческого гемоглобина с высоким содержанием магния) и белка.
+                    Если в рационе есть хлорелла, организм человека лучше «усваивает»
+                    свет и сам синтезирует витамин D — главный регулятор регенерации не
+                    только костной, но и мышечной, нервной тканей.
+                </div>
+                <p id="ItemPrice3">2607</p>
+            </div>
+            <div class="container_item" id="item4">
+                <img src="/JS/js_week1/dom/imgs/2540512_550.jpg" alt="img1" />
+                <div>
+                    Glucosamine & Chondroitin — это три незаменимых для здоровья
+                    суставов и связок компонента: глюкозамин, хондроитин и коллаген.
+                    Комплекс незаменим как для людей, ведущих сидячий образ жизни, так и
+                    для любителей активной физической нагрузки. Действие компонентов
+                    направлено на поддержание здоровья суставов и позвоночника,
+                    профилактику заболеваний опорно-двигательного аппарата.
+                </div>
+                <p id="ItemPrice4">6842</p>
+            </div>
+            <div class="container2">
+                <button onclick="CalculateMe(); this.disabled=true;">Использовать скидку 20%</button>
+                <p id="FinalResult">12380</p>
+            </div>
+            </в>
+    </main>
+    <footer></footer>
+    <script>
+        function CalculateMe() {
+            let final = document.getElementById("FinalResult");
+            let sale = 0.8;
+            let saleValue = final.textContent * sale;
+            final.textContent = saleValue;
+
+            let itemPrice = document.getElementById("ItemPrice4");
+            let ItemPrice1 = itemPrice.textContent * sale;
+           itemPrice.textContent = ItemPrice1;
+
+           let item4Price = document.getElementById("ItemPrice");
+            let ItemPrice4 = item4Price.textContent * sale;
+           item4Price.textContent = ItemPrice4;
+
+           let item3Price = document.getElementById("ItemPrice3");
+            let ItemPrice3 = item3Price.textContent * sale;
+           item3Price.textContent = ItemPrice3;
+
+           let item2Price = document.getElementById("ItemPrice2");
+            let ItemPrice2 = item2Price.textContent * sale;
+           item2Price.textContent = ItemPrice2;           
+        }
+
+    </script>
+</body>
+
+</html>
